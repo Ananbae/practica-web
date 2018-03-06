@@ -1,0 +1,36 @@
+.book-form {  //. es la clase book-form
+    .ui-status {
+        &.error {
+            text-align: center;
+            background-color: $form-error-background-color;
+            padding: 10px;
+            border-radius: 5px; //Para que me unifique el borde. Lo redondee
+            color: $form-error-font-color;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        &.loading {
+            text-align: center;
+            padding-bottom: 10px;
+            display: none;
+        }
+    }
+
+    &.error .ui-status.error {
+        display: block;
+    }  //& este signo significa que cuando la clase se llame book-form y hay otro componente, se tiene que ver el error (es decir, va a salir el error)
+    
+    &.loading .ui-status.loading {
+        display: block;
+    }
+
+    @include if-mobile-landscape {
+        .form-control-group {
+            box-sizing: border-box;
+            width: calc(50% - 4px); //Aquí siempre hay que poner espacio, en calc(  -  )
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+}

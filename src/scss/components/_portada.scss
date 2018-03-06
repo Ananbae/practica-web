@@ -1,0 +1,12 @@
+.title-img {
+    background-size: 100% 100%;
+    background-image: url(img/metro.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    background-position: center center;
+    transition: background-size 0.5s;
+
+    &:hover {
+        background-size: 115% 115%;
+    }
+}

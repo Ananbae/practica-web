@@ -1,0 +1,41 @@
+.web-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: fade-out(black, 0.15); //Para poner transparencia
+    padding: 4px 8px 4px 0px; //Arriba, derecha, abajo, izquierda
+    color: $color-silver;
+    font-size: 20;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    transition: all 0.9s; //all para que afecte al background y al padding
+    &:hover {
+        background: black;
+        padding: 20px; 
+    }
+    
+
+    .web-title {
+        display: flex;
+        font-size: $font-size-large;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 20px;
+        //width: 35%;
+    }
+
+    .form-search {
+        display: flex;
+        align-items: center;
+        .busquedas {
+            width: 150px;
+            padding: 5px;
+            margin-left: 5px;
+            margin-top: 10px;
+            background: $color-silver;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+//Todo lo que sea general lo pongo aquí. Lo particular lo pongo en componentes. 
+body {
+    // background:$color-less-is-less;
+    font-family:$main-font-family;
+    font-size: $font-size-base;
+    color: $main-text-color;
+    background-image: url("./img/wall1.jpg");
+
+    padding-top: 60px;
+
+
+// @include if-mobile-landscape {
+      // background: coral;
+ //   }
+
+  //  @include if-tablet {
+  //      background: gold;
+  //  }
+
+   // @include if-desktop {
+ //       background: lightblue;
+ //   }
+
+}
+
+form {
+    padding: 10px;
+}
+
+label, input, button {
+    display: block; //Cada input lo baja hacia abajo. 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: $font-size-small;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input {
+    margin: 5px 0 15px 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $form-input-border-color;
+    &:focus {
+        outline-color: $form-input-outline-color; //Propiedad donde el formulario tiene el foco
+    }
+}
+
+button {
+    @extend input;
+    background-color: $form-button-background-color;
+    color: $form-button-font-color; //Color son las letras
+    font-weight: bold;
+    transition: all 0.25s;
+    &:active {
+        background: lighten($form-button-background-color, 25%) //Cuando el botón está activado (estoy pulsando sobre él)
+    }
+}
+

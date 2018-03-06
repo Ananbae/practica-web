@@ -1,0 +1,127 @@
+.bloque {
+    display: flex;
+    flex-direction: column;
+
+    .title-ranking {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-h1;
+        height: 90px;
+        color: $color-sidonia-orange;
+        background-color: $color-less-is-less; //Es el mismo color que el fondo.
+
+    }
+
+    .ranking-container {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+
+        @include if-desktop {
+            flex-direction: row;
+        }
+
+        .album-item {
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            @include if-mobile-landscape {
+                    height: 550px;
+                    flex-direction: row;
+            }
+
+            @include if-desktop {
+                flex-direction: column;
+                height: 900px;
+            }
+
+
+            .informacion {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 90%;
+
+                @include if-mobile-landscape {
+                    width: 40%;
+            }
+                @include if-desktop {
+                    width: 80%;
+            }
+
+                .nombre {
+                    font-family: $title-font-family;
+                    font-size: $font-size-h3;
+                    padding-bottom: 30px;
+                }
+
+                .ventas {
+                    font-size: $font-size-h5;
+                    color: opacify($color-amazing-39, 0.9);
+
+                }
+
+                .texto {
+                    padding-bottom: 20px;
+                    font-size: $font-size-base;
+                    line-height: 1.7em; //em: 16 pixeles por estándard en el chrome. La M mayúscula de 16 pixeles, mides la altura y a esa altura le llaman 1em. 2em son 32 pixeles.
+                }
+            }
+
+            .img-ranking {
+                height: 300px;
+
+                @include if-mobile-landscape {
+                    height: 350px;
+            }
+                @include if-desktop {
+                    height: 300px;
+                }
+
+            }
+            &.uno{
+                background-color: transparentize($color-sidonia-orange, $amount:0.7);
+
+                @include if-desktop {
+                    order: 2;
+                    flex: 10; //lo que ocupa. En total es 10+10+10
+                }
+
+                img {
+                    @include if-desktop {
+                        order: -1;
+                    }
+                }
+            }
+
+            &.dos {
+                background-color: transparentize($color-silver, $amount:0.2);
+                
+                @include if-desktop {
+                    order: 3;
+                    flex: 10;
+                }
+
+                img {
+                  @include if-mobile-landscape {
+                      order: 0;
+                  }  
+                }
+
+            }
+
+            &.tres {
+                background-color: transparentize($color-amazing-39, $amount:0.7);
+
+                @include if-desktop {
+                    order: 0;
+                    flex: 10;
+                }
+            }
+        }
+    }
+}

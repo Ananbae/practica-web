@@ -1,0 +1,28 @@
+.web-footer {
+    box-sizing: border-box;
+    background: fade-out($color-grastur, 0.15); //Para poner transparencia
+    padding: 15px;
+    color: $color-silver;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    transition: all 0.9s; //all para que afecte al background y al padding
+    &:hover {
+        background: $color-grastur;
+        padding: 30px; 
+    }
+    
+
+    .web-title {
+        font-size: $font-size-large;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    a {
+        padding-right: 15px;
+        color: $color-silver;
+        text-decoration: none;
+    }
+}

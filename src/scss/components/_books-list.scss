@@ -1,0 +1,73 @@
+.books-list {
+    margin-top: 60px;
+
+    .ui-status {
+        display: none;
+    }
+
+    &.empty {
+        .ui-status.empty {
+            display: block;
+        }
+    }
+
+    &.error {
+        .ui-status.error {
+            display: block;
+        }
+    }
+    &.loading {
+        .ui-status.loading {
+            display: block;
+        }
+    }
+
+    &.ideal {
+        .ui-status.ideal {
+            display: block;
+        }
+    }
+
+    &.empty, &.error, &.loading {
+        font-size: $font-size-large;
+        text-align: center;
+        padding: 50px;
+
+    }
+
+    .book {
+
+        box-sizing: border-box;
+        width: calc(50% - 10px);
+        float: left;
+        background: $color-silver;
+        padding: 30px 30px;
+        margin: 10px 5px; //El 10 se aplica a arriba y a abajo y el 5 se aplica a la izquierda y a la derecha
+        height: 250px;
+        max-height: 250px;
+        overflow: hidden;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+
+        @include if-mobile-landscape {
+            width: calc(25% - 10px);
+        }
+
+        @include if-desktop {
+            width: calc(20% - 10px);
+        }
+        
+        .cover {
+            width: 100%;
+        }
+        
+        .author {
+            background-color: black;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .title {
+            margin-top: 5px;
+        }
+    }
+}
